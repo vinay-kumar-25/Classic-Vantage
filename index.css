@@ -50,9 +50,7 @@ h1, h2, h3, h4, h5, h6 {
   @apply font-bold;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 /* --- Custom CSS for Input Fields to feel less like "form" and more like "web" --- */
 
@@ -189,7 +187,12 @@ input[type="color"]:focus {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: right;
 }
+@media screen and (max-width: 1380px) {
+  .background {
+    background-position: center;
+}}
 .glass {
   /* Glassmorphism Effect */
   background: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
@@ -205,4 +208,7 @@ input[type="color"]:focus {
   background-repeat: no-repeat;
   min-height: 18rem;
   background-position: center;
+}
+*{
+  /* border:2px solid red;   */
 }

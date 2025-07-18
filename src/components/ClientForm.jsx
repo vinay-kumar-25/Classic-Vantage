@@ -528,7 +528,7 @@ export default function ClientForm() {
           <section className="py-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-8 text-center">Confirm & Begin Your Project</h2>
 
-            <div className="flex items-start mb-8 p-4 bg-gradient-to-br from-white to-transparent rounded-lg border border-gray-200">
+            <div className="flex items-start mb-10 p-8 bg-gradient-to-br from-white to-transparent rounded-lg glass">
               <input
                 type="checkbox"
                 id="consentToProceed"
@@ -547,50 +547,54 @@ export default function ClientForm() {
             </div>
 
             {form.consentToProceed && form.priceRange && (
-              <div className="payment-section mt-10 p-6 bg-blue-gemini-50 rounded-xl border glass border-blue-gemini-100 text-center">
-                <h3 className="text-2xl font-bold text-blue-gemini-800 mb-5">Complete Your Payment via UPI</h3>
-                <p className="text-lg text-gray-700 mb-5">
-                  Your selected Classic Vantage plan: <span className="font-bold text-blue-gemini-600">{selectedPriceInfo.label}</span>
-                </p>
-
-                <div className="mb-6 flex flex-col items-center">
-                  <p className="text-gray-700 text-md mb-3">Scan this QR Code to process your payment:</p>
+              <div className="payment-section flex justify-center items-stretch gap-28 flex-col md:flex-row mt-10 p-12 bg-blue-gemini-50 rounded-xl border glass border-blue-gemini-100 grow text-center">
+                {/* scanner left side */}
+                <div className=" flex flex-col items-center"><p className=" text-gray-800 font-semibold text-xl">
+                  <span className="text-blue-gemini-600">{YOUR_UPI_ID}</span>
+                  </p>
                   {upiQrCodeUrl ? (
                     <img
-                      src={qrcode}
-                      alt="UPI QR Code"
-                      className="mx-auto w-48 h-48 sm:w-56 sm:h-56 border border-gray-gemini-300 p-2 rounded-lg bg-white shadow-md"
-                      onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/192x192/E0E7FF/4338CA?text=QR+Code+Error"; }}
+                    src={qrcode}
+                    alt="UPI QR Code"
+                    className="mx-auto w-48 h-48 sm:w-56 sm:h-56 border border-gray-gemini-300 p-2 rounded-lg bg-white shadow-md"
+                    onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/192x192/E0E7FF/4338CA?text=QR+Code+Error"; }}
                     />
                   ) : (
                     <p className="text-red-500 text-sm mt-3">Please select a plan to generate the QR code.</p>
                   )}
-                  <p className="mt-4 text-gray-800 font-semibold text-xl">
-                    UPI ID: <span className="text-blue-gemini-600">{YOUR_UPI_ID}</span>
-                  </p>
+                  
                   <p className="mt-2 text-gray-800 font-semibold text-xl">
                     Amount: <span className="text-blue-gemini-600">₹{selectedPriceInfo.amount}</span>
                   </p>
                 </div>
 
-                <FileUpload
-                  label="Upload Payment Confirmation Screenshot"
-                  name="paymentScreenshot"
-                  onChange={handleChange}
-                  error={errors.paymentScreenshot}
-                  description="Please upload a screenshot of your successful UPI transaction. Accepted formats: JPG, PNG. Max file size: 5MB."
-                />
+                {/* right side ss and submit section  */}
+                <div class="flex flex-col justify-around gap-6 items-start">
+  <h3 class="text-2xl font-bold text-blue-gemini-800">Complete Your Payment via UPI</h3>
+  <p class="text-lg text-gray-700">
+    Your Classic Vantage plan: <span class="font-bold text-blue-gemini-600">{selectedPriceInfo.label}</span>
+  </p>
+  <FileUpload
+    label="Upload Payment Confirmation Screenshot"
+    name="paymentScreenshot"
+    onChange={handleChange}
+    error={errors.paymentScreenshot}
+  />
+  <button
+    type="submit"
+    class="w-full py-3 text-white text-xl font-bold rounded-3xl bg-gradient-to-r from-blue-gemini-400 to-blue-gemini-700 hover:from-blue-gemini-500 hover:to-blue-gemini-800 transition duration-300 ease-in-out transform hover:-translate-y-0.5  shadow-lg"
+    disabled={isSubmitting}
+  >
+    {isSubmitting ? 'Submitting...' : (form.consentToProceed && form.priceRange ? `Submit` : 'Initiate Your Classic Vantage Project')}
+  </button>
+</div>
+              
+            
               </div>
             )}
           </section>
 
-          <button
-            type="submit"
-            className="w-full py-4 text-white text-xl font-bold rounded-xl bg-gradient-to-r from-blue-gemini-500 to-blue-gemini-700 hover:from-blue-gemini-600 hover:to-blue-gemini-800 transition duration-300 ease-in-out transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-gemini-500 focus:ring-opacity-50 shadow-lg"
-            disabled={isSubmitting} // Disable button when submitting
-          >
-            {isSubmitting ? 'Submitting...' : (form.consentToProceed && form.priceRange ? `Submit Your Project & Payment Proof` : 'Initiate Your Classic Vantage Project')}
-          </button>
+
         </form>
       </main>
 
