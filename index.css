@@ -200,7 +200,7 @@ input[type="color"]:focus {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 .herosection{
-   background-image: url("../public/hero.svg");
+   background-image: url("./public/hero.svg");
   background-size: contain;
   background-repeat: no-repeat;
   min-height: 18rem;
