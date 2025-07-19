@@ -352,7 +352,7 @@ export default function ClientForm() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
      
           {/* <img src="../../public/brandwhite.png" alt="" className="md:h-30 mb-4 " /> */}
-          <div className="h-full p-6 justify-center flex gap-4 items-center text-5xl text-blue-900 font-bold"><img src="logo.svg" className="h-20" alt="" />Classic Vantage</div>
+          <div className="h-full p-6 justify-center flex gap-4 items-center text-2xl md:text-5xl text-blue-900 font-bold"><img src="logo.svg" className=" h-10 md:h-20" alt="" />Classic Vantage</div>
           
         </div>
       </header>
