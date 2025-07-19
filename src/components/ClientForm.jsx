@@ -348,14 +348,14 @@ export default function ClientForm() {
 
   return (
     <div className="background min-h-screen  font-sans text-gray-900 ">
-      <header className="bg-gradient-to-b from-[rgb(213,235,247)] to to-[rgb(238,244,249)] shadow-lg">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-     
-          {/* <img src="../../public/brandwhite.png" alt="" className="md:h-30 mb-4 " /> */}
-          <div className="h-full p-6 justify-center flex gap-4 items-center text-2xl md:text-5xl text-blue-900 font-bold"><img src="logo.svg" className=" h-10 md:h-20" alt="" />Classic Vantage</div>
-          
-        </div>
-      </header>
+    <header className="bg-gradient-to-b from-[rgb(213,235,247)] to-[rgb(238,244,249)] shadow-lg py-4 sm:py-6">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="h-full p-2 sm:p-4 justify-center flex gap-2 sm:gap-4 items-center text-xl sm:text-3xl md:text-5xl text-blue-900 font-bold">
+      <img src="logo.svg" className="h-8 sm:h-12 md:h-20 animate-fade-in-down" alt="Classic Vantage Logo" />
+      <span className="animate-fade-in-up">Classic Vantage</span>
+    </div>
+  </div>
+</header>
 
       {/* Increased max-width for main container */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
