@@ -131,7 +131,7 @@ export default function PortfolioSectionsSelector({ label, name, selectedSection
                                 ${isDisabled
                                   ? `opacity-60 cursor-not-allowed bg-gray-100 ${borderColorClass}` // Disabled styles
                                   : isSelected
-                                    ? `border-blue-500 bg-gradient-to-br from-blue-50 to-blue-100 shadow-md transform animate-gradient-shift` // Selected with gradient animation
+                                    ? `border-blue-500 bg-gradient-to-b from-[rgb(213,235,247)] to to-[rgb(238,244,249)] shadow-md transform animate-gradient-shift` // Selected with gradient animation
                                     : `border-gray-200 bg-white hover:${borderColorClass} hover:shadow-sm cursor-pointer`
                                 }
                                 ${!isDisabled ? 'active:scale-95 active:shadow-lg transform-gpu' : ''} `} // Pop on active

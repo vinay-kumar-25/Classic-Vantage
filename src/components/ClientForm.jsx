@@ -348,11 +348,12 @@ export default function ClientForm() {
 
   return (
     <div className="background min-h-screen  font-sans text-gray-900 ">
-      <header className="bg-gradient-to-r from-blue-gemini-700 flex to-blue-gemini-900 text-white shadow-lg">
+      <header className="bg-gradient-to-b from-[rgb(213,235,247)] to to-[rgb(238,244,249)] shadow-lg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
      
-          <img src="../../public/brandname.png" alt="" className="md:h-30 mb-4 " />
-
+          {/* <img src="../../public/brandwhite.png" alt="" className="md:h-30 mb-4 " /> */}
+          <div className="h-full p-6 justify-center flex gap-4 items-center text-5xl text-blue-900 font-bold"><img src="logo.svg" className="h-20" alt="" />Classic Vantage</div>
+          
         </div>
       </header>
 
@@ -368,7 +369,7 @@ export default function ClientForm() {
           <section className="p-8 glass rounded-2xl grid grid-cols-1 md:gap-0 gap-6 md:grid-cols-2">
               <div className="herosection"></div>
             <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-8 text-center">Your Core Details</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-8 text-center">Your Core Details</h2>
             <div className="space-y-2 grid grid-cols-1 gap-2">
               <FormField
                 label="Full Name"
@@ -421,7 +422,6 @@ export default function ClientForm() {
                   rows={4}
                 />
               </div>
-              <hr className="border-t border-gray-200" />
 
               {/* Key Achievements */}
               <div>
